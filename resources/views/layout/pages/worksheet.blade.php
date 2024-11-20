@@ -6,14 +6,14 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
-            <h3 class="text-dark font-weight-bold">DAW TAWO EATERY</h3>
-            <p class="text-secondary">FOR THE MONTH ENDED NOVEMBER 30, 2026</p>
+            <h3 class="text-dark font-weight-bold">WORKSHEET DATA</h3>
+            <p class="text-secondary">Click the row cell to modify or edit</p>
         </div>
         <div>
-            <a href="{{ route('addSheet.index') }}" class="btn btn-dark">Add Sheets</a>
+            <a href="{{ route('addSheet.index') }}" class="btn btn-success"><i class="bi bi-file-earmark-plus"></i> Add Account</a>
             {{-- <button class="btn btn-dark">Edit Worksheet</button> --}}
             
-            <input type="text" class="form-control d-inline-block ml-2" style="width: 200px;" placeholder="Search">
+            {{-- <input type="text" class="form-control d-inline-block ml-2" style="width: 200px;" placeholder="Search"> --}}
         </div>
     </div>
 
@@ -30,15 +30,15 @@
     <div id="alertContainer"></div>
     <div class="card shadow-sm" style="border-radius: 10px;">
         <div class="card-body">
-            <h5 class="card-title font-weight-bold text-dark">Worksheet Data</h5>
-            <span class="badge badge-success mb-3">Daw Tawo Eatery</span>
+            {{-- <h5 class="card-title font-weight-bold text-dark">Worksheet Data</h5> --}}
+            <span class="badge badge-success mb-3">Del Mundo Landscape Specialist</span>
             {{-- <div style="height: 3rem">
                 <h5 id="responseText" class="text-success"></h5>
             </div> --}}
             <div class="table-responsive">
                 <table class="table table-bordered text-center">
                     <thead>
-                        <tr class="text-light" style="background-color: #333;">
+                        <tr class="text-dark">
                             <th>No.</th>
                             <th>Account Title</th>
                             <th colspan="2">Trial Balance</th>
@@ -47,7 +47,7 @@
                             <th colspan="2">Income Statement</th>
                             <th colspan="2">Balance Sheet</th>
                         </tr>
-                        <tr class="text-light" style="background-color: #333;">
+                        <tr class="text-light">
                             <th></th>
                             <th></th>
                             <th class="text-success">Debit</th>
@@ -91,7 +91,7 @@
                             <td class="text-success" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="trial_balance"
-                                data-field="debit">
+                                data-field="debit" style="background: rgb(215, 250, 215)">
                                 @php
                                     if(number_format($trialBalance->debit) == 0) {
                                         echo "";
@@ -99,11 +99,12 @@
                                         echo "₱" . number_format($trialBalance->debit);
                                     }
                                 @endphp
+                                
                             </td>
                             <td class="text-danger" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="trial_balance"
-                                data-field="credit">
+                                data-field="credit" style="background: rgb(255, 165, 180)">
                                 @php
                                     if(number_format($trialBalance->credit) == 0) {
                                         echo "";
@@ -118,7 +119,7 @@
                             <td class="text-success" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="adjustments"
-                                data-field="debit">         
+                                data-field="debit" style="background: rgb(215, 250, 215)">         
                                 @php
                                     if(number_format($adjustment->debit) == 0) {
                                         echo "";
@@ -130,7 +131,7 @@
                             <td class="text-danger" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="adjustments"
-                                data-field="credit">
+                                data-field="credit" style="background: rgb(255, 165, 180)">
                                 @php
                                     if(number_format($adjustment->credit) == 0) {
                                         echo "";
@@ -145,7 +146,7 @@
                             <td class="text-success" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="adjustedTrialBalance"
-                                data-field="debit">
+                                data-field="debit" style="background: rgb(215, 250, 215)">
                                 @php
                                     if(number_format($adjustedTrialBalance->debit) == 0) {
                                         echo "";
@@ -157,7 +158,7 @@
                             <td class="text-danger" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="adjustedTrialBalance"
-                                data-field="credit">
+                                data-field="credit" style="background: rgb(255, 165, 180)">
                                 @php
                                     if(number_format($adjustedTrialBalance->credit) == 0) {
                                         echo "";
@@ -172,7 +173,7 @@
                             <td class="text-success" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="incomeStatement"
-                                data-field="debit">
+                                data-field="debit" style="background: rgb(215, 250, 215)">
                                 @php
                                     if(number_format($incomeStatement->debit) == 0) {
                                         echo "";
@@ -184,7 +185,7 @@
                             <td class="text-danger" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="incomeStatement"
-                                data-field="credit">
+                                data-field="credit" style="background: rgb(255, 165, 180)">
                                 @php
                                     if(number_format($incomeStatement->credit) == 0) {
                                         echo "";
@@ -199,7 +200,7 @@
                             <td class="text-success" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="balanceSheet"
-                                data-field="debit">
+                                data-field="debit" style="background: rgb(215, 250, 215)">
                                 @php
                                     if(number_format($balanceSheet->debit) == 0) {
                                         echo "";
@@ -211,7 +212,7 @@
                             <td class="text-danger" contenteditable="true"
                                 data-id="{{ $accounts->id }}" 
                                 data-type="balanceSheet"
-                                data-field="credit">
+                                data-field="credit" style="background: rgb(255, 165, 180)">
                                 @php
                                     if(number_format($balanceSheet->credit) == 0) {
                                         echo "";

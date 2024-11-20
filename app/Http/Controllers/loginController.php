@@ -47,7 +47,7 @@ class loginController extends Controller
             $user->password = $request->password;
             $user->save();
 
-            return redirect()->intended(route('index'))->with('success', 'Your data has been added');
+            return redirect()->intended(route('login'))->with('success', 'Your data has been added');
             
         }
     }
